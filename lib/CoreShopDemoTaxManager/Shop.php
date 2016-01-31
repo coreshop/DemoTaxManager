@@ -30,7 +30,7 @@ class Shop implements TaxManager
      */
     public function attachEvents()
     {
-        CorePlugin::getEventManager()->attach("tax.getTaxManager", function($e) {
+        CorePlugin::getEventManager()->attach("tax.getTaxManager", function ($e) {
             return $this;
         });
     }
@@ -41,8 +41,9 @@ class Shop implements TaxManager
      *
      * @return bool
      */
-    public static function isAvailableForCountry(Country $country, $type) {
-        if(intval($country->getId()) === 2) {
+    public static function isAvailableForCountry(Country $country, $type)
+    {
+        if (intval($country->getId()) === 2) {
             return true;
         }
 
@@ -54,7 +55,8 @@ class Shop implements TaxManager
      *
      * @return TaxCalculator
      */
-    public function getTaxCalculator() {
+    public function getTaxCalculator()
+    {
         $tax = new Tax();
         $tax->setRate(0);
         $tax->setName("Empty Rate");
