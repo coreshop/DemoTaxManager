@@ -1,4 +1,4 @@
-CoreShopDemoTaxManager
+DemoTaxManager
 ================
 
 Demo TaxManager for CoreShop

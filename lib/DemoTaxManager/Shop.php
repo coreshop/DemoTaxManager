@@ -1,6 +1,6 @@
 <?php
 /**
- * CoreShopDemoTaxManager
+ * DemoTaxManager
  *
  * LICENSE
  *
@@ -12,7 +12,7 @@
  * @license    http://www.coreshop.org/license     GNU General Public License version 3 (GPLv3)
  */
 
-namespace CoreShopDemoTaxManager;
+namespace DemoTaxManager;
 
 use CoreShop\Model\Country;
 use CoreShop\Model\Plugin\TaxManager;
