@@ -20,6 +20,7 @@ use CoreShop\Model\Tax;
 use CoreShop\Model\TaxCalculator;
 use CoreShop\Plugin as CorePlugin;
 use CoreShop\Tool;
+use Pimcore\Model\Object\Fieldcollection\Data\CoreShopUserAddress;
 
 class Shop implements TaxManager
 {
@@ -36,14 +37,14 @@ class Shop implements TaxManager
     }
 
     /**
-     * @param Country $country
+     * @param CoreShopUserAddress $address
      * @param string $type
      *
      * @return bool
      */
-    public static function isAvailableForCountry(Country $country, $type)
+    public static function isAvailableForThisAddress(CoreShopUserAddress $address, $type)
     {
-        if (intval($country->getId()) === 2) {
+        if (intval($address->getCountry()->getId()) === 2) {
             return true;
         }
 
