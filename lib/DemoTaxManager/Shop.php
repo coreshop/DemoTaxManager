@@ -18,6 +18,7 @@ use CoreShop\Model\Country;
 use CoreShop\Model\Plugin\TaxManager;
 use CoreShop\Model\Tax;
 use CoreShop\Model\TaxCalculator;
+use CoreShop\Model\User\Address;
 use CoreShop\Plugin as CorePlugin;
 use CoreShop\Tool;
 use Pimcore\Model\Object\Fieldcollection\Data\CoreShopUserAddress;
@@ -31,18 +32,18 @@ class Shop implements TaxManager
      */
     public function attachEvents()
     {
-        CorePlugin::getEventManager()->attach("tax.getTaxManager", function ($e) {
+        \Pimcore::getEventManager()->attach("coreshop.tax.getTaxManager", function ($e) {
             return $this;
         });
     }
 
     /**
-     * @param CoreShopUserAddress $address
+     * @param Address $address
      * @param string $type
      *
      * @return bool
      */
-    public static function isAvailableForThisAddress(CoreShopUserAddress $address, $type)
+    public static function isAvailableForThisAddress(Address $address, $type)
     {
         if (intval($address->getCountry()->getId()) === 2) {
             return true;
