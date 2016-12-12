@@ -14,14 +14,11 @@
 
 namespace DemoTaxManager;
 
-use CoreShop\Model\Country;
 use CoreShop\Model\Plugin\TaxManager;
 use CoreShop\Model\Tax;
 use CoreShop\Model\TaxCalculator;
 use CoreShop\Model\User\Address;
 use CoreShop\Plugin as CorePlugin;
-use CoreShop\Tool;
-use Pimcore\Model\Object\Fieldcollection\Data\CoreShopUserAddress;
 
 /**
  * Class Shop
